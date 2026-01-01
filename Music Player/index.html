@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="music-player">
+        <div class="player-header">
+            <h1><i class="fas fa-music"></i> Music Player</h1>
+        </div>
+
+        <div class="player-display">
+            <div class="album-art">
+                <img id="albumArt" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23667eea;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23764ba2;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='200' height='200' fill='url(%23grad)'/%3E%3Ccircle cx='100' cy='100' r='60' fill='none' stroke='white' stroke-width='2'/%3E%3Ccircle cx='100' cy='100' r='20' fill='white'/%3E%3C/svg%3E" alt="Album Art">
+                <div class="vinyl" id="vinyl">
+                    <div class="vinyl-inner"></div>
+                </div>
+            </div>
+
+            <div class="song-info">
+                <h2 id="songTitle">Select a song</h2>
+                <p id="artistName">No artist</p>
+            </div>
+        </div>
+
+        <div class="progress-container">
+            <span id="currentTime" class="time">0:00</span>
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+                <input type="range" id="progressRange" min="0" max="100" value="0">
+            </div>
+            <span id="duration" class="time">0:00</span>
+        </div>
+
+        <div class="controls">
+            <button id="prevBtn" class="control-btn" title="Previous">
+                <i class="fas fa-step-backward"></i>
+            </button>
+            <button id="playBtn" class="control-btn play-btn" title="Play">
+                <i class="fas fa-play"></i>
+            </button>
+            <button id="nextBtn" class="control-btn" title="Next">
+                <i class="fas fa-step-forward"></i>
+            </button>
+        </div>
+
+        <div class="volume-section">
+            <div class="volume-control">
+                <i class="fas fa-volume-down"></i>
+                <input type="range" id="volumeRange" min="0" max="100" value="50">
+                <i class="fas fa-volume-up"></i>
+            </div>
+            <label class="autoplay-toggle">
+                <input type="checkbox" id="autoplayToggle">
+                <span>Autoplay</span>
+            </label>
+        </div>
+
+        <div class="playlist-section">
+            <div class="playlist-header">
+                <h3><i class="fas fa-list"></i> Playlist</h3>
+                <button id="togglePlaylist" class="toggle-btn" title="Toggle Playlist">
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+            <div class="playlist" id="playlist">
+            </div>
+        </div>
+    </div>
+
+    <audio id="audioPlayer"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
