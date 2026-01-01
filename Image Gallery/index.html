@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Image Gallery</h1>
+            <p>Browse and explore our beautiful collection</p>
+        </header>
+
+        <!-- Filter/Category Section -->
+        <nav class="filter-section">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="nature">Nature</button>
+            <button class="filter-btn" data-filter="city">City</button>
+            <button class="filter-btn" data-filter="animals">Animals</button>
+            <button class="filter-btn" data-filter="abstract">Abstract</button>
+        </nav>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-wrapper">
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Gallery items will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <button class="lightbox-nav lightbox-prev" aria-label="Previous image">&#10094;</button>
+        <img class="lightbox-image" src="" alt="">
+        <button class="lightbox-nav lightbox-next" aria-label="Next image">&#10095;</button>
+        <div class="lightbox-info">
+            <p class="lightbox-title"></p>
+            <p class="lightbox-description"></p>
+        </div>
+    </div>
+
+    <!-- Image count indicator -->
+    <div class="image-counter" id="imageCounter"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
